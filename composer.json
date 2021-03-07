@@ -1,0 +1,56 @@
+{
+  "name": "emresari89/laravel-options",
+  "description": "Global options loaded from the database",
+  "keywords": [
+    "emresari89",
+    "laravel-options"
+  ],
+  "homepage": "https://github.com/emresari89/laravel-options",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Emre SArıoğlu",
+      "email": "admin@emresarioglu.com.tr",
+      "homepage": "https://emresarioglu.com.tr",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.5",
+    "illuminate/support": "^6.0|^7.0|^8.0",
+    "illuminate/database": "^6.0|^7.0|^8.0"
+  },
+  "require-dev": {
+    "orchestra/database": "^4.0|^5.0|^6.0",
+    "orchestra/testbench": "^4.0|^5.0|^6.0"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "Appstract\\Options\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Appstract\\Options\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Appstract\\Options\\OptionsServiceProvider"
+      ],
+      "aliases": {
+        "Option": "Appstract\\Options\\OptionFacade"
+      }
+    }
+  }
+}
