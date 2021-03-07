@@ -32,7 +32,7 @@ if (!function_exists('options')) {
      *
      * @param array|string $key
      * @param mixed $default
-     * @return mixed|\Appstract\Options\Option
+     * @return mixed|\Emresari\Options\Option
      */
     function options()
     {

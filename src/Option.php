@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Options;
+namespace Emresari\Options;
 
 use Illuminate\Database\Eloquent\Model;
 

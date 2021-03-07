@@ -1,8 +1,8 @@
 <?php
 
-namespace Appstract\Options\Console;
+namespace Emresari\Options\Console;
 
-use Appstract\Options\OptionFacade as Option;
+use Emresari\Options\OptionFacade as Option;
 use Illuminate\Console\Command;
 
 class OptionSetCommand extends Command
