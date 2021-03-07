@@ -19,7 +19,7 @@ class OptionsServiceProvider extends ServiceProvider
             ], 'migrations');
 
             $this->commands([
-                \Appstract\Options\Console\OptionSetCommand::class,
+                \Emresari\Options\Console\OptionSetCommand::class,
             ]);
         }
     }
@@ -29,6 +29,6 @@ class OptionsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('option', \Appstract\Options\Option::class);
+        $this->app->bind('option', \Emresari\Options\Option::class);
     }
 }
