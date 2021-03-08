@@ -39,6 +39,21 @@ if (!function_exists('options')) {
         return app('option')->getAll();
     }
 }
+if (!function_exists('optionID')) {
+    /**
+     * Get / set the specified option value.
+     *
+     * If an array is passed as the key, we will assume you want to set an array of values.
+     *
+     * @param array|string $key
+     * @param mixed $default
+     * @return mixed|\Emresari\Options\Option
+     */
+    function optionID($id)
+    {
+        return app('option')->getID($id);
+    }
+}
 
 if (!function_exists('option_exists')) {
     /**

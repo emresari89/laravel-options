@@ -29,6 +29,9 @@ With the `option()` helper, we can get and set options:
 // Get all options 
 options();
 
+// Get option by id
+optionID($id);
+
 // Get option
 option('someKey');
 

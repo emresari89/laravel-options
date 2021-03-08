@@ -71,6 +71,17 @@ class Option extends Model
     }
 
     /**
+     * Get the All option values.
+     *
+     * @return mixed
+     */
+    public function getID($id)
+    {
+        $option = self::find($id);
+        return $option;
+    }
+
+    /**
      * Set a given option value.
      *
      * @param array|string $key
