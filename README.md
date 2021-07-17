@@ -41,6 +41,9 @@ option('someKey', 'Some default value if the key is not found');
 // Set option
 option(['someKey' => 'someValue']);
 
+// Set option with type (type 1 default)
+option_type(['someKey' => 'someValue'],null,2);
+
 // Remove option
 option()->remove('someKey');
 

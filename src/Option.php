@@ -86,14 +86,19 @@ class Option extends Model
      *
      * @param array|string $key
      * @param mixed $value
+     * @param mixed $type
      * @return void
      */
-    public function set($key, $value = null)
+    public function set($key, $value = null, $type = null)
     {
         $keys = is_array($key) ? $key : [$key => $value];
 
         foreach ($keys as $key => $value) {
-            self::updateOrCreate(['key' => $key], ['value' => $value]);
+            if ($type != null) {
+                self::updateOrCreate(['key' => $key], ['value' => $value], ['type' => $type]);
+            } else {
+                self::updateOrCreate(['key' => $key], ['value' => $value]);
+            }
         }
 
         // @todo: return the option

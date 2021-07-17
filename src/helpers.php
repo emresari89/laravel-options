@@ -1,5 +1,30 @@
 <?php
 
+if (!function_exists('option_type')) {
+    /**
+     * Get / set the specified option value.
+     *
+     * If an array is passed as the key, we will assume you want to set an array of values.
+     *
+     * @param array|string $key
+     * @param mixed $default
+     * @param mixed $type
+     * @return mixed|\Appstract\Options\Option
+     */
+    function option_type($key = null, $default = null, $type = null)
+    {
+        if (is_null($key)) {
+            return app('option');
+        }
+
+        if (is_array($key)) {
+            return app('option')->set($key, null, $type);
+        }
+
+        return app('option')->get($key, $default);
+    }
+}
+
 if (!function_exists('option')) {
     /**
      * Get / set the specified option value.
