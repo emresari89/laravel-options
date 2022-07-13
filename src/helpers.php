@@ -17,11 +17,8 @@ if (!function_exists('option_type')) {
             return app('option');
         }
 
-        if (is_array($key)) {
-            return app('option')->set($key, null, $type);
-        }
+        return app('option')->set($key, $default, $type);
 
-        return app('option')->get($key, $default);
     }
 }
 
