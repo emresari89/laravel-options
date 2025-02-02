@@ -18,7 +18,6 @@ if (!function_exists('option_type')) {
         }
 
         return app('option')->set($key, $default, $type);
-
     }
 }
 
@@ -32,15 +31,20 @@ if (!function_exists('option')) {
      * @param mixed $default
      * @return mixed|\Appstract\Options\Option
      */
-    function option($key = null, $default = null)
+    function option($key = null, $default = null, $cache = null)
     {
         if (is_null($key)) {
             return app('option');
         }
 
+        if (is_null($cache)) {
+            return app('option')->get($key, $default);
+        }
+
         if (is_array($key)) {
             return app('option')->set($key);
         }
+
 
         return app('option')->get($key, $default);
     }

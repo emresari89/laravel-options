@@ -45,22 +45,6 @@ class Option extends Model
     }
 
     /**
-     * Get the specified option value.
-     *
-     * @param string $key
-     * @param mixed $default
-     * @return mixed
-     */
-    public function get($key, $default = null)
-    {
-        if ($option = self::where('key', $key)->first()) {
-            return $option->value;
-        }
-
-        return $default;
-    }
-
-    /**
      * Get the All option values.
      *
      * @return mixed
@@ -102,7 +86,24 @@ class Option extends Model
             }
         }
 
+        return self::get($key);
         // @todo: return the option
+    }
+
+    /**
+     * Get the specified option value.
+     *
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public function get($key, $default = null)
+    {
+        if ($option = self::where('key', $key)->first()) {
+            return $option->value;
+        }
+
+        return $default;
     }
 
     /**
